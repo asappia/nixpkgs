@@ -29,7 +29,7 @@
 let
   version = "2.9.1";
 in
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "paddleocr";
   inherit version;
   format = "setuptools";
