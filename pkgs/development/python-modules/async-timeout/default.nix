@@ -8,14 +8,14 @@
 
 buildPythonPackage rec {
   pname = "async-timeout";
-  version = "4.0.3";
+  version = "5.0.1";
   format = "setuptools";
 
   disabled = pythonOlder "3.6";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-RkDZa+hNgtAu1Z6itxBaD3szq+hwNwPNCrC/h8QnUi8=";
+    hash = "sha256-2TIaej1aal4YfoJNL6B5PON5ogKTV4LVVdbp0nNWd9M=";
   };
 
   propagatedBuildInputs = [ typing-extensions ];
