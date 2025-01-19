@@ -118,11 +118,6 @@ let
         tritonclient.optional-dependencies.http ++ tritonclient.optional-dependencies.grpc
       );
   };
-in
-buildPythonPackage {
-  pname = "bentoml";
-  inherit version;
-  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "bentoml";
@@ -130,6 +125,11 @@ buildPythonPackage {
     tag = "v${version}";
     hash = "sha256-zc/JvnEEoV21EbBHhLBWvilidXHx1pxYsBYISFg16Us=";
   };
+in
+buildPythonPackage {
+  pname = "bentoml";
+  inherit version src;
+  pyproject = true;
 
   pythonRelaxDeps = [
     "cattrs"
