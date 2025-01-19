@@ -12,13 +12,13 @@
 
 buildPythonPackage rec {
   pname = "pyrfc3339";
-  version = "1.1";
+  version = "2.0.1";
   pyproject = true;
 
   src = fetchPypi {
     pname = "pyRFC3339";
     inherit version;
-    sha256 = "06jv7ar7lpvvk0dixzwdr3wgm0g1lipxs429s2z7knwwa7hwpf41";
+    sha256 = "sha256-5HhDN56jXBKWw7bGepSKGkkK4FhO38veoOr/td0plgs=";
   };
 
   nativeBuildInputs = [ setuptools ];
