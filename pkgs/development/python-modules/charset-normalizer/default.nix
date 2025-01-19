@@ -3,15 +3,18 @@
   aiohttp,
   buildPythonPackage,
   fetchFromGitHub,
+  mypy,
   pytestCheckHook,
   pythonOlder,
   requests,
+  setuptools,
+  setuptools-scm
 }:
 
 buildPythonPackage rec {
   pname = "charset-normalizer";
   version = "3.4.1";
-  format = "setuptools";
+  pyproject = true;
 
   disabled = pythonOlder "3.5";
 
@@ -23,9 +26,17 @@ buildPythonPackage rec {
   };
 
   postPatch = ''
-    substituteInPlace setup.cfg \
-      --replace " --cov=charset_normalizer --cov-report=term-missing" ""
+    substituteInPlace pyproject.toml \
+      --replace-fail "mypy>=1.4.1,<=1.14.0" mypy
   '';
+
+  build-system = [
+    mypy
+    setuptools
+    setuptools-scm
+  ];
+
+  env.CHARSET_NORMALIZER_USE_MYPYC = "1";
 
   nativeCheckInputs = [ pytestCheckHook ];
 
