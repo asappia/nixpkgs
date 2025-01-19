@@ -9,12 +9,12 @@
 
 buildPythonPackage rec {
   pname = "termcolor";
-  version = "2.4.0";
+  version = "2.5.0";
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-qrnlYEfIrEHteY+jbYkqN6yms+kVnz4MJLxkqbOse3o=";
+    hash = "sha256-mY2NJ9ptSEQujh8BYRkHa2kNliUHUx30iQ/NLbLvim8=";
   };
 
   nativeBuildInputs = [
