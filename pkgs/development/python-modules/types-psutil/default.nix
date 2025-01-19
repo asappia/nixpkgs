@@ -10,7 +10,8 @@ buildPythonPackage rec {
   format = "setuptools";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "types_psutil";
+    inherit version;
     hash = "sha256-YA9aNr1eDriIfw4/P/LPFU2QaQrYEjyKcHu6SrlNMYU=";
   };
 
