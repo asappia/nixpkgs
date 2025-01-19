@@ -9,12 +9,12 @@
 
 buildPythonPackage rec {
   pname = "python-json-logger";
-  version = "2.0.7";
+  version = "3.2.1";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-I+fsAtNCN8WqHimgcBk6Tqh1g7tOf4/QbT3oJkxLLhw=";
+    hash = "sha256-jrBVTqF8t1sF0oSLwU+wL729nWlyEgeBuXQ4C/oWIAg=";
   };
 
   build-system = [ setuptools ];
