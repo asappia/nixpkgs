@@ -16,14 +16,14 @@
 
 buildPythonPackage rec {
   pname = "pytest-regressions";
-  version = "2.5.0";
+  version = "2.7.0";
   format = "setuptools";
 
   disabled = pythonOlder "3.6";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-gYx4hMHP87q/ie67AsvCezB4VrGYVCfCTVLLgSoQb9k=";
+    hash = "sha256-TDAGTgkjkpASyU9dbzUgW+Bv2HCcfw26AijgXEYK8F4=";
   };
 
   nativeBuildInputs = [ setuptools-scm ];
