@@ -44,7 +44,7 @@ buildPythonPackage rec {
 
   pythonImportsCheck = [ "pook" ];
 
-  disabledTests =[
+  disabledTests = [
     # furl compat issue
     "test_headers_not_matching"
   ];
