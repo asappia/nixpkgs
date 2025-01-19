@@ -48,7 +48,7 @@ buildPythonPackage rec {
   };
 
   meta = with lib; {
-    changelog = "https://github.com/pallets/click/releases/tag/${src.tag}";
+    changelog = "https://github.com/pallets/click/blob/${src.tag}/CHANGES.rst";
     homepage = "https://click.palletsprojects.com/";
     description = "Create beautiful command line interfaces in Python";
     longDescription = ''
