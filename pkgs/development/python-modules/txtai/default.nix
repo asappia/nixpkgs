@@ -217,11 +217,6 @@ let
       all
       ;
   };
-in
-buildPythonPackage {
-  pname = "txtai";
-  inherit version;
-  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "neuml";
@@ -229,6 +224,11 @@ buildPythonPackage {
     tag = "v${version}";
     hash = "sha256-fMzCYw9eqlpGI5FKoyYyxT17EhUFmFP9lrCn/LFC6ks=";
   };
+in
+buildPythonPackage {
+  pname = "txtai";
+  inherit version src;
+  pyproject = true;
 
   build-system = [ setuptools ];
 
