@@ -8,14 +8,14 @@
 
 buildPythonPackage rec {
   pname = "requests-futures";
-  version = "1.0.1";
+  version = "1.0.2";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-9VpO+ABw4oWOfR5zEj0r+uryW5P9NDhNjd8UjitnY3M=";
+    hash = "sha256-a361eUAzboAPrrw9q1BjYO3slHj3si3FcIWK06p0WNo=";
   };
 
   propagatedBuildInputs = [ requests ];
