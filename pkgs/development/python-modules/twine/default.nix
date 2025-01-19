@@ -22,13 +22,13 @@
 
 buildPythonPackage rec {
   pname = "twine";
-  version = "5.1.1";
+  version = "6.0.1";
   format = "pyproject";
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-mqCCUTnAKzQ02RNUXHuEeiHINeEVl/UlWELUV9ojIts=";
+    hash = "sha256-NhWLCd9UBuHJwfuO2yT8K+OHcJRD5zdmibk4UxWC7ic=";
   };
 
   patches = [
