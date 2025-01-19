@@ -1,7 +1,6 @@
 {
   lib,
   buildPythonPackage,
-  pythonOlder,
   fetchFromGitHub,
   flit-core,
   pytestCheckHook,
@@ -18,8 +17,6 @@ buildPythonPackage rec {
   pname = "click";
   version = "8.2.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "pallets";
