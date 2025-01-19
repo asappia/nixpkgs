@@ -16,7 +16,7 @@
   sc2-headless,
 }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "pysc2";
   version = "4.0";
 
@@ -53,6 +53,7 @@ buildPythonPackage {
   ];
 
   meta = {
+    changelog = "https://github.com/google-deepmind/pysc2/releases/tag/${src.tag}";
     description = "Starcraft II environment and library for training agents";
     homepage = "https://github.com/deepmind/pysc2";
     license = lib.licenses.asl20;
