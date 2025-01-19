@@ -10,7 +10,7 @@
 
 buildPythonPackage rec {
   pname = "semver";
-  version = "3.0.2";
+  version = "3.0.3";
   pyproject = true;
 
   disabled = pythonOlder "3.7";
@@ -19,7 +19,7 @@ buildPythonPackage rec {
     owner = "python-semver";
     repo = "python-semver";
     tag = version;
-    hash = "sha256-772PSUq1dqtn9aOol+Bo0S0OItBmoiCNP8q/YCBvKU4=";
+    hash = "sha256-/E2wJcAmEnmK9QSl7a4aLMHCIh0glq9VIlYls6GhfXM=";
   };
 
   postPatch = ''
