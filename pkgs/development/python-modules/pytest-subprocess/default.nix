@@ -15,7 +15,7 @@
 
 buildPythonPackage rec {
   pname = "pytest-subprocess";
-  version = "1.5.2";
+  version = "1.5.3";
   pyproject = true;
 
   disabled = pythonOlder "3.6";
@@ -24,7 +24,7 @@ buildPythonPackage rec {
     owner = "aklajnert";
     repo = "pytest-subprocess";
     tag = version;
-    hash = "sha256-wEPIRWEwAiHSpcu9FMtkpAxqz64csT9AO27NDax3zNY=";
+    hash = "sha256-3vBYOk/P78NOjAbs3fT6py5QOOK3fX+AKtO4j5vxZfk=";
   };
 
   build-system = [ setuptools ];
@@ -45,7 +45,7 @@ buildPythonPackage rec {
   meta = with lib; {
     description = "Plugin to fake subprocess for pytest";
     homepage = "https://github.com/aklajnert/pytest-subprocess";
-    changelog = "https://github.com/aklajnert/pytest-subprocess/blob/${version}/HISTORY.rst";
+    changelog = "https://github.com/aklajnert/pytest-subprocess/blob/${src.tag}/HISTORY.rst";
     license = licenses.mit;
     maintainers = with maintainers; [ dotlambda ];
   };
