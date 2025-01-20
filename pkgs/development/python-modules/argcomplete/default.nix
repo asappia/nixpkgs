@@ -3,8 +3,8 @@
   buildPythonPackage,
   fetchFromGitHub,
   pythonOlder,
-  setuptools,
-  setuptools-scm,
+  hatchling,
+  hatch-vcs,
 }:
 
 buildPythonPackage rec {
@@ -22,8 +22,8 @@ buildPythonPackage rec {
   };
 
   build-system = [
-    setuptools
-    setuptools-scm
+    hatchling
+    hatch-vcs
   ];
 
   # Tries to build and install test packages which fails
