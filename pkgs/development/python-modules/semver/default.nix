@@ -3,6 +3,7 @@
   buildPythonPackage,
   fetchFromGitHub,
   pytestCheckHook,
+  pytest-cov-stub,
   pythonOlder,
   setuptools,
   setuptools-scm,
@@ -32,7 +33,10 @@ buildPythonPackage rec {
     setuptools-scm
   ];
 
-  nativeCheckInputs = [ pytestCheckHook ];
+  nativeCheckInputs = [
+    pytestCheckHook
+    pytest-cov-stub
+  ];
 
   disabledTestPaths = [
     # Don't test the documentation
