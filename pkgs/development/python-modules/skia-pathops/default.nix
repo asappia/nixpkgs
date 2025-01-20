@@ -22,7 +22,7 @@ buildPythonPackage rec {
   format = "setuptools";
 
   src = fetchPypi {
-    pname = "skia-pathops";
+    pname = "skia_pathops";
     inherit version;
     extension = "zip";
     hash = "sha256-niUs3rbE0WLoKYbTHb2JxnXRZ3y4AZwuE+YpXUpVcmk=";
