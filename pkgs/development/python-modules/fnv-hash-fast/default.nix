@@ -6,6 +6,7 @@
   poetry-core,
   setuptools,
   fnvhash,
+  pytest-codspeed,
   pytest-cov-stub,
   pytestCheckHook,
 }:
@@ -33,6 +34,7 @@ buildPythonPackage rec {
   pythonImportsCheck = [ "fnv_hash_fast" ];
 
   nativeCheckInputs = [
+    pytest-codspeed
     pytest-cov-stub
     pytestCheckHook
   ];
