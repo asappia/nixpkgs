@@ -10,6 +10,7 @@
   pytestCheckHook,
   pythonOlder,
   rpds-py,
+  typing-extensions,
 }:
 
 let
@@ -36,6 +37,7 @@ let
     dependencies = [
       attrs
       rpds-py
+      typing-extensions
     ];
 
     nativeCheckInputs = [
