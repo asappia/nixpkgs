@@ -3,7 +3,7 @@
   lib,
   buildPythonPackage,
   pythonOlder,
-  fetchPypi,
+  fetchFromGitHub,
   isPyPy,
 
   # build-system
@@ -29,15 +29,16 @@ buildPythonPackage rec {
 
   disabled = pythonOlder "3.7";
 
-  src = fetchPypi {
-    pname = "Mako";
-    inherit version;
-    hash = "sha256-V3uX5BRYDT4IjUfC276VlKp6UUbtKHXU36kHWvLdPMg=";
+  src = fetchFromGitHub {
+    owner = "sqlalchemy";
+    repo = "mako";
+    tag = "rel_${lib.replaceStrings [ "." ] [ "_" ] version}";
+    hash = "sha256-7KttExqHxv//q8ol7eOFIrgRHbQySQTvL7Rd9VooX0Y=";
   };
 
-  nativeBuildInputs = [ setuptools ];
+  build-system = [ setuptools ];
 
-  propagatedBuildInputs = [ markupsafe ];
+  dependencies = [ markupsafe ];
 
   optional-dependencies = {
     babel = [ babel ];
