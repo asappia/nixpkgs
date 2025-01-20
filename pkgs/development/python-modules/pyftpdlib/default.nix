@@ -4,6 +4,8 @@
   fetchPypi,
   mock,
   psutil,
+  pyasyncore,
+  pyasynchat,
   pyopenssl,
   pysendfile,
   pythonOlder,
@@ -24,7 +26,11 @@ buildPythonPackage rec {
 
   build-system = [ setuptools ];
 
-  dependencies = [ pysendfile ];
+  dependencies = [
+    pyasyncore
+    pyasynchat
+    pysendfile
+  ];
 
   optional-dependencies = {
     ssl = [ pyopenssl ];
