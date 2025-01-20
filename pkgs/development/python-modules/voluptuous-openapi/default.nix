@@ -10,6 +10,7 @@
   voluptuous,
 
   # tests
+  openapi-schema-validator,
   pytestCheckHook,
 }:
 
@@ -29,7 +30,10 @@ buildPythonPackage rec {
 
   dependencies = [ voluptuous ];
 
-  nativeCheckInputs = [ pytestCheckHook ];
+  nativeCheckInputs = [
+    openapi-schema-validator
+    pytestCheckHook
+  ];
 
   pythonImportsCheck = [ "voluptuous_openapi" ];
 
