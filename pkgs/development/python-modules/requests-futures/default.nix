@@ -9,7 +9,7 @@
   pytestCheckHook,
   pytest-cov-stub,
   pytest-httpbin,
-  werkzeug
+  werkzeug,
 }:
 
 buildPythonPackage rec {
