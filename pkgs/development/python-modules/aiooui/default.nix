@@ -4,6 +4,7 @@
   fetchFromGitHub,
   poetry-core,
   pytest-asyncio,
+  pytest-cov-stub,
   pytestCheckHook,
   pythonOlder,
 }:
@@ -25,16 +26,16 @@ buildPythonPackage rec {
   postPatch = ''
     # Remove requirements and build part for the OUI data
     substituteInPlace pyproject.toml \
-      --replace-fail "-v -Wdefault --cov=aiooui --cov-report=term-missing:skip-covered" "" \
       --replace-fail 'script = "build_oui.py"' "" \
-      --replace-fail ", 'requests'" "" \
+      --replace-fail ", 'requests', 'aiohttp'" "" \
       --replace-fail '"setuptools>=65.4.1", ' ""
   '';
 
-  nativeBuildInputs = [ poetry-core ];
+  build-system = [ poetry-core ];
 
   nativeCheckInputs = [
     pytest-asyncio
+    pytest-cov-stub
     pytestCheckHook
   ];
 
