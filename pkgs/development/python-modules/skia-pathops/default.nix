@@ -7,7 +7,7 @@
   ninja,
   setuptools-scm,
   setuptools,
-  fetchFromGitHub,
+  fetchPypi,
   gn,
   pytestCheckHook,
   cctools,
@@ -21,11 +21,11 @@ buildPythonPackage rec {
   version = "0.8.0.post2";
   pyproject = true;
 
-  src = fetchFromGitHub {
-    owner = "fonttools";
-    repo = "skia-pathops";
-    tag = "v${version}";
-    hash = "sha256-yT/jbLiZTxk/LSy57Opa6hr7/qYZDh6qlqi52njEnP4=";
+  src = fetchPypi {
+    pname = "skia_pathops";
+    inherit version;
+    extension = "zip";
+    hash = "sha256-niUs3rbE0WLoKYbTHb2JxnXRZ3y4AZwuE+YpXUpVcmk=";
   };
 
   postPatch =
