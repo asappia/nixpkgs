@@ -7,7 +7,7 @@
   ninja,
   setuptools-scm,
   setuptools,
-  fetchPypi,
+  fetchFromGitHub,
   gn,
   pytestCheckHook,
   cctools,
@@ -19,13 +19,13 @@
 buildPythonPackage rec {
   pname = "skia-pathops";
   version = "0.8.0.post2";
-  format = "setuptools";
+  pyproject = true;
 
-  src = fetchPypi {
-    pname = "skia_pathops";
-    inherit version;
-    extension = "zip";
-    hash = "sha256-niUs3rbE0WLoKYbTHb2JxnXRZ3y4AZwuE+YpXUpVcmk=";
+  src = fetchFromGitHub {
+    owner = "fonttools";
+    repo = "skia-pathops";
+    tag = "v${version}";
+    hash = "sha256-yT/jbLiZTxk/LSy57Opa6hr7/qYZDh6qlqi52njEnP4=";
   };
 
   postPatch =
@@ -54,11 +54,15 @@ buildPythonPackage rec {
           EOF
         '';
 
+  build-system = [
+    cython
+    setuptools
+    setuptools-scm
+  ];
+
   nativeBuildInputs =
     [
-      cython
       ninja
-      setuptools-scm
     ]
     ++ lib.optionals stdenv.hostPlatform.isDarwin [
       cctools.libtool
@@ -69,8 +73,6 @@ buildPythonPackage rec {
     ApplicationServices
     OpenGL
   ];
-
-  propagatedBuildInputs = [ setuptools ];
 
   nativeCheckInputs = [ pytestCheckHook ];
 
